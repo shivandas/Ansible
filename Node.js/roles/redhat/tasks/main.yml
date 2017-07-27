@@ -1,0 +1,21 @@
+---
+
+- include: tasks/wget.yml
+
+- name: Install the PPA of Nodesource
+  shell: wget -qO- https://rpm.nodesource.com/setup_{{nodejs_version}} | bash -
+  register: nodejs_repo_added
+  when: nodejs_repo_added.changed
+  tags:
+  - nodejs
+
+- name: install "{{item}}" package
+  yum:
+    name: "{{item}}"
+    state: present
+  with_items:
+  - gcc-c++
+  - make
+  - nodejs
+  tags:
+  - nodejs

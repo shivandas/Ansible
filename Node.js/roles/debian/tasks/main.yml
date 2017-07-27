@@ -1,0 +1,17 @@
+---
+
+- include: tasks/wget.yml
+
+- name: Install the PPA of Nodesource
+  shell: wget -qO- https://deb.nodesource.com/setup_{{nodejs_version}} | bash -
+  register: nodejs_repo_added
+  when: nodejs_repo_added.changed
+  tags:
+  - nodejs
+
+- name: install nodejs package
+  apt:
+    name: nodejs
+    state: present
+  tags:
+  - nodejs

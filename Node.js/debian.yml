@@ -1,0 +1,6 @@
+---
+
+- hosts: all
+  remote_host: root
+  roles:
+  - debian
