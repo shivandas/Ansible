@@ -1,6 +1,6 @@
 ---
 
-- hosts: all
-  remote_host: root
+- hosts: debian
+  become: yes
   roles:
-  - debian
+    - debian
