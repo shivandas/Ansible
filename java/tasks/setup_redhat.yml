@@ -1,0 +1,10 @@
+---
+
+- include_vars: redhat.yml
+
+- name: Install OpenJDK
+  yum:
+    name: "{{java_package}}"
+    state: present
+
+- include: set_env.yml

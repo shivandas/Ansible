@@ -1,0 +1,10 @@
+---
+
+- incude_vars: debian.yml
+
+- name: Install OpenJDK
+  apt:
+    name: "{{java_package}}"
+    state: present
+
+- include: set_env.yml
