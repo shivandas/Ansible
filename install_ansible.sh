@@ -7,7 +7,7 @@ sudo apt update && sudo apt dist-upgrade -y
 sudo apt install -y libssl-dev libffi-dev python-dev python-pip
 
 ## Install Ansible and Azure SDK via pip
-sudo pip install ansible[azure]
+pip install ansible[azure]
 
 ## Create a credentials file to store azure credentials
 mkdir ~/.azure
