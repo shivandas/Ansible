@@ -10,5 +10,5 @@ sudo apt install -y libssl-dev libffi-dev python-dev python-pip
 pip install ansible[azure]
 
 ## Create a credentials file to store azure credentials
-mkdir ~/.azure
-touch ~/.azure/credentials
+sudo mkdir ~/.azure
+sudo touch ~/.azure/credentials
